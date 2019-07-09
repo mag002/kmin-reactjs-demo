@@ -6,23 +6,15 @@ class TodoApp extends React.Component {
   state = {
     todo: []
   };
-  addItemHandler = event => {
-    console.log(event);
-    if (event.keyCode == 13) {
-      const preTodo = this.state.todo;
-      preTodo.push({
-        title: event.target.value,
-        id: Date.now(),
-        done: false
-      });
-      this.setState({ todo: preTodo });
-    }
+  addTodo = newTodo => {
+    let todos = this.state.todo;
+    this.setState({ todo: [...todos, newTodo] });
   };
   render() {
     return (
       <div className="container">
         <h1>Todo App</h1>
-        <TaskInput add={this.addItemHandler} />
+        <TaskInput addTodo={this.addTodo} />
         <TaskView>
           {this.state.todo.length > 0 ? (
             this.state.todo.map((item, index) => {
