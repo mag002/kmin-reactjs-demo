@@ -10,7 +10,7 @@
   font-weight: 600;
 }
 .task-item svg {
-  width: 50%;
+  width: 10px;
 }
 .done {
   background: lightgreen;
