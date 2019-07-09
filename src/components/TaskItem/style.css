@@ -1,0 +1,17 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 0px;
+  align-items: center;
+}
+.task-item p {
+  margin: 0px;
+  font-weight: 600;
+}
+.task-item svg {
+  width: 50%;
+}
+.done {
+  background: lightgreen;
+}
