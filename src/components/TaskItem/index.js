@@ -3,7 +3,10 @@ import "./style.css";
 import CloseIcon from "../../assets/icon/close.js";
 const TaskItem = props => {
   return (
-    <div className={`${props.done ? "done" : ""} task-item`}>
+    <div
+      className={`${props.status ? "done" : ""} task-item`}
+      onClick={props.update}
+    >
       <p style={{ textDecoration: props.done ? "line-through" : "" }}>
         {props.stt} . {props.title}
       </p>
