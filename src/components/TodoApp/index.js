@@ -4,19 +4,12 @@ import TaskView from "../TaskView";
 import TaskItem from "../TaskItem";
 class TodoApp extends React.Component {
   state = {
-    todo: []
+    todo: [{ id: 1, title: "Test", done: false }]
   };
-  addItemHandler = event => {
-    console.log(event);
-    if (event.keyCode == 13) {
-      const preTodo = this.state.todo;
-      preTodo.push({
-        title: event.target.value,
-        id: Date.now(),
-        done: false
-      });
-      this.setState({ todo: preTodo });
-    }
+  addItemHandler = inputTitle => {
+    const newTask = { id: Date.now(), title: inputTitle, done: false };
+    const newTodo = [...this.state.todo, newTask];
+    this.setState({ todo: newTodo });
   };
   render() {
     return (
